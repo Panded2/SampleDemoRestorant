@@ -6,6 +6,8 @@ import { Ionicons } from '@expo/vector-icons';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { RestorantList } from './src/components/restorantScreens/RestorantList';
+
+import {MovieList} from './src/components/movies/MovieList';
 function HomeScreen() {
   return (
     <RestorantList />
@@ -14,9 +16,7 @@ function HomeScreen() {
 
 function SettingsScreen() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Settings!</Text>
-    </View>
+   <MovieList/>
   );
 }
 
@@ -43,21 +43,21 @@ function SampleTabs() {
     >
 
       <Tab.Screen name="HomeScreen" component={HomeScreen} options={{
-        tabBarLabel: 'Home',
+        tabBarLabel: 'Restorants',
         tabBarIcon: ({ color }) => (
-          <MaterialCommunityIcons name="home" color={color} size={26} />
+          <MaterialCommunityIcons name="glass-wine" color={'red'} size={26} />
         ),
       }} />
       <Tab.Screen name="SettingsScreen" component={SettingsScreen} options={{
-        tabBarLabel: 'settings',
+        tabBarLabel: 'Movies',
         tabBarIcon: ({ color }) => (
-          <MaterialCommunityIcons name="phone-settings" color={color} size={26} />
+          <MaterialCommunityIcons name="movie-roll" color={'magenta'} size={26} />
         ),
       }} />
       <Tab.Screen name="ContactScreen" component={ContactScreen} options={{
         tabBarLabel: 'Contact',
         tabBarIcon: ({ color }) => (
-          <MaterialCommunityIcons name="face-profile-woman" color={color} size={26} />
+          <MaterialCommunityIcons name="contacts" color={'red'} size={26} />
         ),
       }} />
     </Tab.Navigator>
